@@ -1,0 +1,181 @@
+.emoji-reaction-button {
+margin-right: 5%;
+}
+
+.emoji-reaction-buttons{
+  margin-left: 20%;
+}
+
+.hover-text-like {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.hover-text-like:hover::after {
+  content: attr(like-data-text);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 40%;
+  font-size: 20px;
+
+}
+
+.hover-text-love {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.hover-text-love:hover::after {
+  content: attr(love-data-text);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 40%;
+  font-size: 20px;
+}
+
+.hover-text-laugh {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.hover-text-laugh:hover::after {
+  content: attr(laugh-data-text);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 40%;
+  font-size: 20px;
+}
+.hover-text-angry {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.hover-text-angry:hover::after {
+  content: attr(angry-data-text);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 40%;
+  font-size: 20px;
+}
+
+.cpm-reaction-icon-box{
+  /* display: inline-block; */
+  /* display: flex; */
+justify-content: center;
+align-items: center;
+
+  padding-right: 5%;
+}
+
+.cpm-reactions-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.cpm-reaction-icon {
+  margin: 1%;
+  transition: transform 0.2s; /* Add a transition effect to make the scaling smoother */
+}
+
+.cpm-reaction-icon:hover {
+  transform: scale(1.2); /* Enlarge the emoji by 1.2 times its original size */
+}
+
+/* .highlighted{
+  background-color: red; 
+  border-radius: 50%; 
+  /* width: 100px; 
+  height: 100px; */
+
+
+.highlighted {
+  /* background: yellow; */
+  border: 2px ;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 2px;
+  background-color: #ffeb3b; /* change to highlight color */
+  box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
+  border-radius: 50%;
+} 
+.hover-text-like {
+  transition: background-color 0.3s ease;
+}
+
+.hover-text-like:hover {
+  background-color: #ffeb3b; /* change to highlight color */
+  box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
+    border-radius: 50%;
+}
+
+.hover-text-love {
+  transition: background-color 0.3s ease;
+}
+
+.hover-text-love:hover {
+  background-color: #ffeb3b; /* change to highlight color */
+  box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
+    border-radius: 50%;
+}
+.hover-text-laugh {
+  transition: background-color 0.3s ease;
+}
+
+.hover-text-laugh:hover {
+  background-color: #ffeb3b; /* change to highlight color */
+  box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
+    border-radius: 50%;
+}
+.hover-text-angry {
+  transition: background-color 0.3s ease;
+}
+
+.hover-text-angey:hover {
+  background-color: #ffeb3b; /* change to highlight color */
+  box-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b; /* add glowing effect */
+    border-radius: 50%;
+}
+
+.cpm-reaction-count {
+  font-size: 10px;
+  padding: 5px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: #ededed;
+  color: #444444;
+ 
+  line-height: 15px;
+  font-family: "Roboto", serif;
+  font-family: "Roboto", sans-serif;
+}
+.emoji-reactions .cpm-reaction-count {
+  top: -3px;
+  right: -10px;
+  z-index: 1;
+}
+.colorful-reactions .cpm-reaction .cpm-reaction-count {
+  background: #ffffff;
+}
