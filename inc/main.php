@@ -84,8 +84,8 @@ add_action('wp_ajax_emoji_reactions', 'emoji_reactions');
 add_action('wp_ajax_nopriv_emoji_reactions', 'emoji_reactions');
 
 function emoji_reactions(){
-  $post_id = $_POST['post_id'];
-  $reaction = $_POST['reaction'];
+  $post_id = isset($_POST['post_id']) ? sanitize_text_field($_POST['post_id']) : '';
+  $reaction = isset($_POST['reaction']) ? sanitize_text_field($_POST['reaction']) : '';
   $current_count = '';
   // Check if user is logged in
   if (is_user_logged_in()) {
@@ -106,19 +106,19 @@ function emoji_reactions(){
     }
 
   } else {
-    $ip_add = '';
-    // whether ip is from share internet
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-      $ip_add = $_SERVER['HTTP_CLIENT_IP'];
-    }
-    //whether ip is from proxy
-    elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-      $ip_add = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }
-    //whether ip is from remote address
-    else {
-      $ip_add = $_SERVER['REMOTE_ADDR'];
-    }
+   $ip_add = '';
+// whether ip is from share internet
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+  $ip_add = sanitize_text_field($_SERVER['HTTP_CLIENT_IP']);
+}
+//whether ip is from proxy
+elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+  $ip_add = sanitize_text_field($_SERVER['HTTP_X_FORWARDED_FOR']);
+}
+//whether ip is from remote address
+else {
+  $ip_add = sanitize_text_field($_SERVER['REMOTE_ADDR']);
+}
 
     $current_count = get_post_meta($post_id, 'emoji_reaction_' . $post_id . '_(' . $ip_add . ')_' . $reaction, true);
     if ($current_count == 1) {
